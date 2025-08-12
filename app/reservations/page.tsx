@@ -201,7 +201,7 @@ Please confirm availability for this reservation. Thank you! 🙏`
                         <SelectTrigger>
                           <SelectValue placeholder="Select time" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="max-h-[200px] overflow-y-auto">
                           {timeSlots.map((time) => (
                             <SelectItem key={time} value={time}>
                               {time}
