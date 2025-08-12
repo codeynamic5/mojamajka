@@ -76,18 +76,18 @@ export default function ReservationsPage() {
     }
 
     // Format the reservation details for WhatsApp
-    const reservationDetails = `🍽️ *NEW RESERVATION REQUEST*
+    const reservationDetails = `FORM RESERVASI MOJA MAJKA CAFE & EATERY
 
-👤 *Name:* ${formData.name}
-📧 *Email:* ${formData.email}
-📞 *Phone:* ${formData.phone}
-📅 *Date:* ${format(date, "PPPP")}
-🕐 *Time:* ${formData.time}
-👥 *Party Size:* ${formData.partySize} ${formData.partySize === "1" ? "person" : "people"}
-${formData.seatingPreference ? `🪑 *Seating Preference:* ${formData.seatingPreference}` : ""}
-${formData.specialRequests ? `📝 *Special Requests:* ${formData.specialRequests}` : ""}
+Nama Lengkap: ${formData.name}
+Tanggal Kedatangan: ${format(date, "PPPP")}
+Jam Kedatangan: ${formData.time}
+Jumlah Pax: ${formData.partySize} ${formData.partySize === "1" ? "person" : "people"}
+Email: ${formData.email}
+No Telp.: ${formData.phone}
+${formData.seatingPreference ? `Preferensi Tempat Duduk: ${formData.seatingPreference}` : ""}
+${formData.specialRequests ? `Catatan Tambahan: ${formData.specialRequests}` : ""}
 
-Please confirm availability for this reservation. Thank you! 🙏`
+Please confirm availability for this reservation. Thank you!`
 
     // Replace with your WhatsApp number (include country code, no + or spaces)
     const whatsappNumber = "6281317822742" // Replace with actual WhatsApp number
