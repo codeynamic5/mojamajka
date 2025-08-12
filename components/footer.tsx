@@ -60,12 +60,6 @@ export default function Footer() {
               <Link href="/about" className="block hover:text-red-200 transition-colors">
                 About Us
               </Link>
-              <Link href="#" className="block hover:text-red-200 transition-colors">
-                Private Events
-              </Link>
-              <Link href="#" className="block hover:text-red-200 transition-colors">
-                Catering
-              </Link>
             </div>
           </div>
 

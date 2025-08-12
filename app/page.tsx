@@ -79,25 +79,25 @@ export default function HomePage() {
               {
                 name: "Artisan Breakfast Bowl",
                 description: "Farm-fresh eggs, avocado, quinoa, and seasonal vegetables",
-                price: "$16",
+                price: "16",
                 image: "breakfast bowl with eggs and avocado",
               },
               {
                 name: "Signature Burger",
                 description: "Grass-fed beef, aged cheddar, caramelized onions, brioche bun",
-                price: "$18",
+                price: "18",
                 image: "gourmet burger with fries",
               },
               {
                 name: "Mediterranean Salad",
                 description: "Mixed greens, feta, olives, tomatoes, house vinaigrette",
-                price: "$14",
+                price: "14",
                 image: "fresh mediterranean salad",
               },
               {
                 name: "Artisan Coffee",
                 description: "Single-origin beans, expertly roasted, perfectly brewed",
-                price: "$5",
+                price: "5",
                 image: "coffee cup with latte art",
               },
             ].map((item, index) => (
@@ -160,59 +160,6 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Location & Hours */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-4xl font-bold text-red-900 mb-8">Visit Us</h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-red-800 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Location</h3>
-                    <p className="text-gray-700">
-                      Jalan Raya Purworejo,
-                      <br />
-                      Kabupaten Magelang,
-                      <br />
-                      Jawa Tengah 56172
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Clock className="w-6 h-6 text-red-800 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Hours</h3>
-                    <div className="text-gray-700 space-y-1">
-                      <p>Sunday - Thursday: 10 AM - 10 PM</p>
-                      <p>Friday - Saturday: 10 AM - 11 PM</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-red-800 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Contact</h3>
-                    <p className="text-gray-700">0822-2777-6785</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <Mail className="w-6 h-6 text-red-800 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Email</h3>
-                    <p className="text-gray-700">mojamajka.info@gmail.com</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden">
-              <Image src="/placeholder.svg?height=400&width=600" alt="Cafe exterior" fill className="object-cover" />
-            </div>
           </div>
         </div>
       </section>
