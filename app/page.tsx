@@ -43,14 +43,13 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-red-900 mb-6">Our Story</h2>
+              <h2 className="text-4xl font-bold text-red-900 mb-6">Cerita Moja Majka</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Founded in 2015, The Corner Cafe has been serving the community with passion, quality, and warmth. We
-                believe in creating more than just meals – we craft experiences that bring people together.
+                Moja Majka diambil dari bahasa Serbia yang artinya “ibu saya” atau “ibuku” dengan kesan tersayang atau terhormat. Menceritakan kisah founder yang pernah tinggal di Serbia dan memiliki momen berkesan
+                di sana.
               </p>
               <p className="text-lg text-gray-700 mb-8">
-                Using locally sourced ingredients and time-honored recipes, every dish tells the story of our commitment
-                to excellence and community.
+                Seperti kata pepatah nama adalah doa, ada harapan Moja Majka menjadi tempat yang welcoming, comforting dan pleasant seperti rumah Ibu bagi semua orang di berbagai kalangan dan komunitas.
               </p>
               <Button asChild className="bg-red-800 hover:bg-red-700">
                 <Link href="/about">Learn More About Us</Link>
@@ -177,11 +176,11 @@ export default function HomePage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Location</h3>
                     <p className="text-gray-700">
-                      123 Main Street
+                      Jalan Raya Purworejo,
                       <br />
-                      Downtown District
+                      Kabupaten Magelang,
                       <br />
-                      City, State 12345
+                      Jawa Tengah 56172
                     </p>
                   </div>
                 </div>
@@ -190,9 +189,8 @@ export default function HomePage() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Hours</h3>
                     <div className="text-gray-700 space-y-1">
-                      <p>Monday - Friday: 7:00 AM - 9:00 PM</p>
-                      <p>Saturday: 8:00 AM - 10:00 PM</p>
-                      <p>Sunday: 8:00 AM - 8:00 PM</p>
+                      <p>Sunday - Thursday: 10 AM - 10 PM</p>
+                      <p>Friday - Saturday: 10 AM - 11 PM</p>
                     </div>
                   </div>
                 </div>
@@ -200,14 +198,14 @@ export default function HomePage() {
                   <Phone className="w-6 h-6 text-red-800 mt-1" />
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Contact</h3>
-                    <p className="text-gray-700">(555) 123-4567</p>
+                    <p className="text-gray-700">0822-2777-6785</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="w-6 h-6 text-red-800 mt-1" />
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Email</h3>
-                    <p className="text-gray-700">hello@cornercafe.com</p>
+                    <p className="text-gray-700">mojamajka.info@gmail.com</p>
                   </div>
                 </div>
               </div>

@@ -13,18 +13,18 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5" />
                 <div>
-                  <p>123 Main Street</p>
-                  <p>Downtown District</p>
-                  <p>City, State 12345</p>
+                  <p>Jalan Raya Purworejo,</p>
+                  <p>Kabupaten Magelang,</p>
+                  <p>Jawa Tengah 56172</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5" />
-                <p>(555) 123-4567</p>
+                <p>0822-2777-6785</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5" />
-                <p>hello@cornercafe.com</p>
+                <p>mojamajka.info@gmail.com</p>
               </div>
             </div>
           </div>
@@ -36,17 +36,13 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <Clock className="w-5 h-5" />
                 <div>
-                  <p className="font-semibold">Mon - Fri</p>
-                  <p>7:00 AM - 9:00 PM</p>
+                  <p className="font-semibold">Sun - Thu</p>
+                  <p>10:00 AM - 10:00 PM</p>
                 </div>
               </div>
               <div className="ml-8">
-                <p className="font-semibold">Saturday</p>
-                <p>8:00 AM - 10:00 PM</p>
-              </div>
-              <div className="ml-8">
-                <p className="font-semibold">Sunday</p>
-                <p>8:00 AM - 8:00 PM</p>
+                <p className="font-semibold">Fri - Sat</p>
+                <p>10:00 AM - 11:00 PM</p>
               </div>
             </div>
           </div>
@@ -93,7 +89,7 @@ export default function Footer() {
 
         <div className="border-t border-red-800 mt-8 pt-8 text-center">
           <p className="text-red-200">
-            © 2024 The Corner Cafe. All rights reserved. |
+            © 2025 Moja Majka. All rights reserved. |
             <Link href="#" className="hover:text-white ml-2">
               Privacy Policy
             </Link>{" "}
