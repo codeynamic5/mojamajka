@@ -1,11 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Abhaya_Libre } from "next/font/google"
 import "./globals.css"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 
-const inter = Inter({ subsets: ["latin"] })
+const abhayaLibre = Abhaya_Libre({ 
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"]
+})
 
 export const metadata: Metadata = {
   title: "The Corner Cafe - Where Every Cup Tells a Story",
@@ -22,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={abhayaLibre.className}>
         <Navigation />
         <main>{children}</main>
         <Footer />

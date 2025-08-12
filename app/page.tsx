@@ -18,7 +18,7 @@ export default function HomePage() {
           priority
         />
         <div className="relative z-20 text-center max-w-4xl px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">The Corner Cafe</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">Moja Majka</h1>
           <p className="text-xl md:text-2xl mb-8 text-red-100">
             Where every cup tells a story and every meal feels like home
           </p>
