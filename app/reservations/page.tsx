@@ -15,33 +15,38 @@ import { CalendarIcon, Clock, Phone, Mail, MapPin, MessageCircle } from "lucide-
 import { format } from "date-fns"
 import { cn } from "@/lib/utils"
 
-const timeSlots = [
-  "10:00 AM",
-  "10:30 AM",
-  "11:00 AM",
-  "11:30 AM",
-  "12:00 PM",
-  "12:30 PM",
-  "1:00 PM",
-  "1:30 PM",
-  "2:00 PM",
-  "2:30 PM",
-  "3:00 PM",
-  "3:30 PM",
-  "4:00 PM",
-  "4:30 PM",
-  "5:00 PM",
-  "5:30 PM",
-  "6:00 PM",
-  "6:30 PM",
-  "7:00 PM",
-  "7:30 PM",
-  "8:00 PM",
-  "8:30 PM",
-  "9:00 PM",
-  "9:30 PM",
-  "10:00 PM",
-]
+const generateTimeSlots = (selectedDate: Date | undefined) => {
+  if (!selectedDate) {
+    // Default times when no date is selected
+    return []
+  }
+
+  const dayOfWeek = selectedDate.getDay() // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  const isFridayOrSaturday = dayOfWeek === 5 || dayOfWeek === 6 // Friday or Saturday
+  
+  // Sunday to Thursday: 10 AM to 10 PM
+  // Friday to Saturday: 10 AM to 11 PM
+  const endHour = isFridayOrSaturday ? 23 : 22 // 11 PM or 10 PM
+  
+  const timeSlots = []
+  
+  // Start from 10 AM (10:00)
+  for (let hour = 10; hour <= endHour; hour++) {
+    // Add :00 slot
+    const hour12 = hour > 12 ? hour - 12 : hour
+    const ampm = hour >= 12 ? 'PM' : 'AM'
+    const displayHour = hour12 === 0 ? 12 : hour12
+    
+    timeSlots.push(`${displayHour}:00 ${ampm}`)
+    
+    // Add :30 slot (except for the last hour)
+    if (hour < endHour) {
+      timeSlots.push(`${displayHour}:30 ${ampm}`)
+    }
+  }
+  
+  return timeSlots
+}
 
 const partySizes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"]
 
@@ -180,6 +185,8 @@ Please confirm availability for this reservation. Thank you! 🙏`
                                   onSelect={(selectedDate) => {
                                     console.log("Date selected:", selectedDate)
                                     setDate(selectedDate)
+                                    // Clear the selected time when date changes
+                                    setFormData((prev) => ({ ...prev, time: "" }))
                                   }}
                                   disabled={(date) => {
                                     const today = new Date()
@@ -197,18 +204,29 @@ Please confirm availability for this reservation. Thank you! 🙏`
                     </div>
                     <div>
                       <Label htmlFor="time">Time *</Label>
-                      <Select value={formData.time} onValueChange={(value) => handleInputChange("time", value)}>
+                      <Select 
+                        value={formData.time} 
+                        onValueChange={(value) => handleInputChange("time", value)}
+                        disabled={!date}
+                      >
                         <SelectTrigger>
-                          <SelectValue placeholder="Select time" />
+                          <SelectValue placeholder={date ? "Select time" : "Select date first"} />
                         </SelectTrigger>
                         <SelectContent className="max-h-[200px] overflow-y-auto">
-                          {timeSlots.map((time) => (
+                          {generateTimeSlots(date).map((time) => (
                             <SelectItem key={time} value={time}>
                               {time}
                             </SelectItem>
                           ))}
                         </SelectContent>
                       </Select>
+                      {date && (
+                        <p className="text-xs text-gray-500 mt-1">
+                          {date.getDay() === 5 || date.getDay() === 6 
+                            ? "Friday & Saturday: 10:00 AM - 11:00 PM" 
+                            : "Sunday - Thursday: 10:00 AM - 10:00 PM"}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <Label htmlFor="partySize">Party Size *</Label>
@@ -326,23 +344,22 @@ Please confirm availability for this reservation. Thank you! 🙏`
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-red-800" />
                       <div>
-                        <p className="font-semibold">Monday - Friday</p>
-                        <p className="text-gray-700">7:00 AM - 9:00 PM</p>
+                        <p className="font-semibold">Sunday - Thursday</p>
+                        <p className="text-gray-700">Reservations: 10:00 AM - 10:00 PM</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <Clock className="w-5 h-5 text-red-800" />
                       <div>
-                        <p className="font-semibold">Saturday</p>
-                        <p className="text-gray-700">8:00 AM - 10:00 PM</p>
+                        <p className="font-semibold">Friday - Saturday</p>
+                        <p className="text-gray-700">Reservations: 10:00 AM - 11:00 PM</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-red-800" />
-                      <div>
-                        <p className="font-semibold">Sunday</p>
-                        <p className="text-gray-700">8:00 AM - 8:00 PM</p>
-                      </div>
+                    <div className="bg-red-50 p-3 rounded-lg">
+                      <p className="text-sm text-red-800">
+                        <strong>Note:</strong> Available time slots will appear after selecting a date. 
+                        Weekend reservations have extended hours until 11:00 PM.
+                      </p>
                     </div>
                   </div>
                 </CardContent>
