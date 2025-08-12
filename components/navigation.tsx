@@ -26,7 +26,7 @@ export default function Navigation() {
             <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center">
               <div className="w-8 h-8 border border-white transform rotate-45"></div>
             </div>
-            <span className="text-xl font-bold">The Corner Cafe</span>
+            <span className="text-xl font-bold">Moja Majka</span>
           </Link>
 
           {/* Desktop Navigation */}
