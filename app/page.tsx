@@ -1,13 +1,234 @@
+import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Star, Clock, MapPin, Phone, Mail } from "lucide-react"
+
 export default function HomePage() {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
+      {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-red-800/60 z-10" />
+        <Image
+          src="/mm-logo.png?height=1080&width=1920"
+          alt="Cafe interior"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="relative z-20 text-center max-w-4xl px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">The Corner Cafe</h1>
           <p className="text-xl md:text-2xl mb-8 text-red-100">
             Where every cup tells a story and every meal feels like home
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="bg-red-700 hover:bg-red-600 text-white">
+              <Link href="/menu">View Our Menu</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-red-900 bg-transparent"
+            >
+              <Link href="/reservations">Make a Reservation</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Preview */}
+      <section className="py-16 px-4 bg-red-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-red-900 mb-6">Our Story</h2>
+              <p className="text-lg text-gray-700 mb-6">
+                Founded in 2015, The Corner Cafe has been serving the community with passion, quality, and warmth. We
+                believe in creating more than just meals – we craft experiences that bring people together.
+              </p>
+              <p className="text-lg text-gray-700 mb-8">
+                Using locally sourced ingredients and time-honored recipes, every dish tells the story of our commitment
+                to excellence and community.
+              </p>
+              <Button asChild className="bg-red-800 hover:bg-red-700">
+                <Link href="/about">Learn More About Us</Link>
+              </Button>
+            </div>
+            <div className="relative h-96">
+              <Image
+                src="/placeholder.svg?height=400&width=600"
+                alt="Chef preparing food"
+                fill
+                className="object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Menu Items */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-red-900 mb-4">Signature Dishes</h2>
+            <p className="text-xl text-gray-600">Taste the flavors that make us special</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: "Artisan Breakfast Bowl",
+                description: "Farm-fresh eggs, avocado, quinoa, and seasonal vegetables",
+                price: "$16",
+                image: "breakfast bowl with eggs and avocado",
+              },
+              {
+                name: "Signature Burger",
+                description: "Grass-fed beef, aged cheddar, caramelized onions, brioche bun",
+                price: "$18",
+                image: "gourmet burger with fries",
+              },
+              {
+                name: "Mediterranean Salad",
+                description: "Mixed greens, feta, olives, tomatoes, house vinaigrette",
+                price: "$14",
+                image: "fresh mediterranean salad",
+              },
+              {
+                name: "Artisan Coffee",
+                description: "Single-origin beans, expertly roasted, perfectly brewed",
+                price: "$5",
+                image: "coffee cup with latte art",
+              },
+            ].map((item, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="relative h-48">
+                  <Image
+                    src={`/placeholder.svg?height=200&width=300&query=${item.image}`}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-red-900 mb-2">{item.name}</h3>
+                  <p className="text-gray-600 mb-4">{item.description}</p>
+                  <div className="text-2xl font-bold text-red-800">{item.price}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 px-4 bg-red-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-red-900 mb-4">What Our Guests Say</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sarah Johnson",
+                rating: 5,
+                review:
+                  "The best cafe in town! The atmosphere is cozy and the food is absolutely delicious. I come here every weekend.",
+              },
+              {
+                name: "Michael Chen",
+                rating: 5,
+                review:
+                  "Outstanding service and incredible coffee. The staff really knows how to make you feel welcome.",
+              },
+              {
+                name: "Emily Rodriguez",
+                rating: 5,
+                review:
+                  "Perfect spot for brunch with friends. The menu has something for everyone and the quality is consistently excellent.",
+              },
+            ].map((testimonial, index) => (
+              <Card key={index} className="p-6">
+                <CardContent className="p-0">
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-4">"{testimonial.review}"</p>
+                  <p className="font-semibold text-red-900">- {testimonial.name}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Location & Hours */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-4xl font-bold text-red-900 mb-8">Visit Us</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-6 h-6 text-red-800 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Location</h3>
+                    <p className="text-gray-700">
+                      123 Main Street
+                      <br />
+                      Downtown District
+                      <br />
+                      City, State 12345
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Clock className="w-6 h-6 text-red-800 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Hours</h3>
+                    <div className="text-gray-700 space-y-1">
+                      <p>Monday - Friday: 7:00 AM - 9:00 PM</p>
+                      <p>Saturday: 8:00 AM - 10:00 PM</p>
+                      <p>Sunday: 8:00 AM - 8:00 PM</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Phone className="w-6 h-6 text-red-800 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Contact</h3>
+                    <p className="text-gray-700">(555) 123-4567</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Mail className="w-6 h-6 text-red-800 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Email</h3>
+                    <p className="text-gray-700">hello@cornercafe.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-96 bg-gray-200 rounded-lg overflow-hidden">
+              <Image src="/placeholder.svg?height=400&width=600" alt="Cafe exterior" fill className="object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Reservation */}
+      <section className="py-16 px-4 bg-red-900 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Dine With Us?</h2>
+          <p className="text-xl mb-8 text-red-100">
+            Reserve your table today and experience the warmth of The Corner Cafe
+          </p>
+          <Button asChild size="lg" className="bg-white text-red-900 hover:bg-red-50">
+            <Link href="/reservations">Make a Reservation</Link>
+          </Button>
         </div>
       </section>
     </div>

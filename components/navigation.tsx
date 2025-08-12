@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
@@ -23,10 +24,13 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 border-2 border-white rounded-lg flex items-center justify-center">
-              <div className="w-8 h-8 border border-white transform rotate-45"></div>
-            </div>
-            <span className="text-xl font-bold">Moja Majka</span>
+            <Image 
+              src="/mm-logo.png" 
+              alt="Mojamajka Cafe" 
+              width={100} 
+              height={100} 
+              className="rounded-lg"
+            />
           </Link>
 
           {/* Desktop Navigation */}
