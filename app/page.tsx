@@ -30,7 +30,7 @@ export default function HomePage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-red-900 bg-transparent"
+              className="border-white text-white hover:bg-white hover:text-red-900 bg-transparent transition-all duration-300 hover:scale-150"
             >
               <Link href="/reservations">Make a Reservation</Link>
             </Button>
@@ -226,7 +226,7 @@ export default function HomePage() {
           <p className="text-xl mb-8 text-red-100">
             Reserve your table today and experience the warmth of The Corner Cafe
           </p>
-          <Button asChild size="lg" className="bg-white text-red-900 hover:bg-red-50">
+          <Button asChild size="lg" className="bg-white text-red-900 hover:bg-red-50 transition-all duration-300 hover:scale-110">
             <Link href="/reservations">Make a Reservation</Link>
           </Button>
         </div>
