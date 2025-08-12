@@ -22,15 +22,15 @@ export default function HomePage() {
           <p className="text-xl md:text-2xl mb-8 text-red-100">
             Where every cup tells a story and every meal feels like home
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-red-700 hover:bg-red-600 text-white">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center button-container">
+            <Button asChild size="lg" className="bg-red-700 hover:bg-red-600 text-white transition-all duration-300 menu-button">
               <Link href="/menu">View Our Menu</Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-red-900 bg-transparent transition-all duration-300 hover:scale-150"
+              className="border-white text-white hover:bg-white hover:text-red-900 bg-transparent transition-all duration-300 hover:scale-150 reservation-button"
             >
               <Link href="/reservations">Make a Reservation</Link>
             </Button>

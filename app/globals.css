@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .button-container:has(.reservation-button:hover) .menu-button {
+    transform: translateX(-50px);
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
