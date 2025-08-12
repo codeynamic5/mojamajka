@@ -11,14 +11,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { CalendarIcon, Clock, Phone, Mail, MapPin } from "lucide-react"
+import { CalendarIcon, Clock, Phone, Mail, MapPin, MessageCircle } from "lucide-react"
 import { format } from "date-fns"
+import { cn } from "@/lib/utils"
 
 const timeSlots = [
-  "8:00 AM",
-  "8:30 AM",
-  "9:00 AM",
-  "9:30 AM",
   "10:00 AM",
   "10:30 AM",
   "11:00 AM",
@@ -41,6 +38,9 @@ const timeSlots = [
   "7:30 PM",
   "8:00 PM",
   "8:30 PM",
+  "9:00 PM",
+  "9:30 PM",
+  "10:00 PM",
 ]
 
 const partySizes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10+"]
@@ -63,9 +63,38 @@ export default function ReservationsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Reservation submitted:", { ...formData, date })
-    alert("Reservation request submitted! We'll confirm via email within 24 hours.")
+    
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !date || !formData.time || !formData.partySize) {
+      alert("Please fill in all required fields.")
+      return
+    }
+
+    // Format the reservation details for WhatsApp
+    const reservationDetails = `🍽️ *NEW RESERVATION REQUEST*
+
+👤 *Name:* ${formData.name}
+📧 *Email:* ${formData.email}
+📞 *Phone:* ${formData.phone}
+📅 *Date:* ${format(date, "PPPP")}
+🕐 *Time:* ${formData.time}
+👥 *Party Size:* ${formData.partySize} ${formData.partySize === "1" ? "person" : "people"}
+${formData.seatingPreference ? `🪑 *Seating Preference:* ${formData.seatingPreference}` : ""}
+${formData.specialRequests ? `📝 *Special Requests:* ${formData.specialRequests}` : ""}
+
+Please confirm availability for this reservation. Thank you! 🙏`
+
+    // Replace with your WhatsApp number (include country code, no + or spaces)
+    const whatsappNumber = "6281317822742" // Replace with actual WhatsApp number
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(reservationDetails)}`
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank')
+    
+    // Show confirmation to user
+    alert("Redirecting to WhatsApp to send your reservation request!")
   }
 
   return (
@@ -123,27 +152,48 @@ export default function ReservationsPage() {
 
                   <div className="grid md:grid-cols-3 gap-4">
                     <div>
-                      <Label>Date *</Label>
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant="outline"
-                            className="w-full justify-start text-left font-normal bg-transparent"
-                          >
-                            <CalendarIcon className="mr-2 h-4 w-4" />
-                            {date ? format(date, "PPP") : "Select date"}
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0">
-                          <Calendar
-                            mode="single"
-                            selected={date}
-                            onSelect={setDate}
-                            initialFocus
-                            disabled={(date) => date < new Date()}
-                          />
-                        </PopoverContent>
-                      </Popover>
+                      <Label htmlFor="date">Date *</Label>
+                      <div className="space-y-2">
+                        {/* Fancy Calendar Picker */}
+                        <div className="relative">
+                          <Popover>
+                            <PopoverTrigger asChild>
+                              <button
+                                type="button"
+                                onClick={() => console.log("Date button clicked")}
+                                className={cn(
+                                  "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+                                  !date && "text-muted-foreground"
+                                )}
+                              >
+                                <span className="flex items-center">
+                                  <CalendarIcon className="mr-2 h-4 w-4" />
+                                  {date ? format(date, "PPP") : "Select date"}
+                                </span>
+                              </button>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-auto p-0 z-[9999]" align="start">
+                              <div className="bg-white border rounded-lg shadow-lg">
+                                <Calendar
+                                  mode="single"
+                                  selected={date}
+                                  onSelect={(selectedDate) => {
+                                    console.log("Date selected:", selectedDate)
+                                    setDate(selectedDate)
+                                  }}
+                                  disabled={(date) => {
+                                    const today = new Date()
+                                    today.setHours(0, 0, 0, 0)
+                                    return date < today
+                                  }}
+                                  initialFocus
+                                  className="rounded-md"
+                                />
+                              </div>
+                            </PopoverContent>
+                          </Popover>
+                        </div>
+                      </div>
                     </div>
                     <div>
                       <Label htmlFor="time">Time *</Label>
@@ -224,6 +274,16 @@ export default function ReservationsPage() {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-start gap-4">
+                    <MessageCircle className="w-6 h-6 text-red-800 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">WhatsApp Reservations</h3>
+                      <p className="text-gray-700 mb-2">+1 (234) 567-8900</p>
+                      <p className="text-sm text-gray-600">
+                        Submit your reservation request via WhatsApp for quick confirmation
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
                     <Phone className="w-6 h-6 text-red-800 mt-1" />
                     <div>
                       <h3 className="font-semibold text-lg mb-2">Phone Reservations</h3>
@@ -294,7 +354,7 @@ export default function ReservationsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3 text-sm text-gray-700">
-                    <p>• Reservations are confirmed within 24 hours via email</p>
+                    <p>• Reservations are confirmed within 2 hours via WhatsApp</p>
                     <p>• Please arrive within 15 minutes of your reservation time</p>
                     <p>• Cancellations must be made at least 2 hours in advance</p>
                     <p>• Large parties (8+) may require a deposit</p>
