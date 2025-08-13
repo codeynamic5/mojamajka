@@ -11,9 +11,9 @@ const abhayaLibre = Abhaya_Libre({
 })
 
 export const metadata: Metadata = {
-  title: "The Corner Cafe - Where Every Cup Tells a Story",
+  title: "Moja Majka Cafe & Eatery",
   description:
-    "Experience exceptional food, artisan coffee, and warm hospitality at The Corner Cafe. Located in the heart of downtown, we serve fresh, locally-sourced meals in a cozy atmosphere.",
+    "Experience exceptional food, artisan coffee, and warm hospitality at Moja Majka Cafe & Eatery. Located in the heart of Magelang, we serve fresh, locally-sourced meals in a cozy atmosphere.",
   keywords: "cafe, restaurant, coffee, breakfast, lunch, dinner, local, downtown, reservations",
     generator: 'v0.dev'
 }

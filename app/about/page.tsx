@@ -26,7 +26,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold text-red-900 mb-6">From Humble Beginnings</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Founded in 2015 by Maria and James Thompson, The Corner Cafe started as a small neighborhood spot with
+                Founded in 2025, Moja Majka started as a small neighborhood spot with
                 just six tables and a big dream. What began as a simple coffee shop has grown into a beloved community
                 gathering place.
               </p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 icon: Users,
                 title: "Inclusive Space",
                 description:
-                  "Everyone is welcome at The Corner Cafe. We celebrate diversity and create a space for all.",
+                  "Everyone is welcome at Moja Majka. We celebrate diversity and create a space for all.",
               },
             ].map((value, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow">
