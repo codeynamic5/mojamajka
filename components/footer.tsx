@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock } from "lucide-react"
+import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock, Globe } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -68,13 +68,10 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-4 mb-4">
               <Link href="#" className="hover:text-red-200 transition-colors">
-                <Facebook className="w-6 h-6" />
+                <Globe className="w-6 h-6" />
               </Link>
-              <Link href="#" className="hover:text-red-200 transition-colors">
+              <Link href="https://www.instagram.com/mojamajka.eatery/" className="hover:text-red-200 transition-colors">
                 <Instagram className="w-6 h-6" />
-              </Link>
-              <Link href="#" className="hover:text-red-200 transition-colors">
-                <Twitter className="w-6 h-6" />
               </Link>
             </div>
             <p className="text-sm text-red-200">Stay connected for updates, specials, and behind-the-scenes moments!</p>

@@ -113,10 +113,10 @@ Please confirm availability for this reservation. Thank you!`
       </section>
 
       <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex justify-center">
             {/* Reservation Form */}
-            <Card>
+            <Card className="w-full max-w-2xl">
               <CardHeader>
                 <CardTitle className="text-2xl text-red-900">Reservation Details</CardTitle>
               </CardHeader>
@@ -283,104 +283,6 @@ Please confirm availability for this reservation. Thank you!`
                 </form>
               </CardContent>
             </Card>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-red-900">Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <MessageCircle className="w-6 h-6 text-red-800 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">WhatsApp Reservations</h3>
-                      <p className="text-gray-700 mb-2">+1 (234) 567-8900</p>
-                      <p className="text-sm text-gray-600">
-                        Submit your reservation request via WhatsApp for quick confirmation
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-red-800 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Phone Reservations</h3>
-                      <p className="text-gray-700 mb-2">(555) 123-4567</p>
-                      <p className="text-sm text-gray-600">
-                        Call us directly for immediate confirmation or large party reservations (10+ people)
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-red-800 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Email</h3>
-                      <p className="text-gray-700 mb-2">reservations@cornercafe.com</p>
-                      <p className="text-sm text-gray-600">For special events or detailed requests</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-red-800 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">Location</h3>
-                      <p className="text-gray-700">
-                        123 Main Street
-                        <br />
-                        Downtown District
-                        <br />
-                        City, State 12345
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-red-900">Hours & Availability</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-red-800" />
-                      <div>
-                        <p className="font-semibold">Sunday - Thursday</p>
-                        <p className="text-gray-700">Reservations: 10:00 AM - 10:00 PM</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-5 h-5 text-red-800" />
-                      <div>
-                        <p className="font-semibold">Friday - Saturday</p>
-                        <p className="text-gray-700">Reservations: 10:00 AM - 11:00 PM</p>
-                      </div>
-                    </div>
-                    <div className="bg-red-50 p-3 rounded-lg">
-                      <p className="text-sm text-red-800">
-                        <strong>Note:</strong> Available time slots will appear after selecting a date. 
-                        Weekend reservations have extended hours until 11:00 PM.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-red-900">Reservation Policy</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3 text-sm text-gray-700">
-                    <p>• Reservations are confirmed within 2 hours via WhatsApp</p>
-                    <p>• Please arrive within 15 minutes of your reservation time</p>
-                    <p>• Cancellations must be made at least 2 hours in advance</p>
-                    <p>• Large parties (8+) may require a deposit</p>
-                    <p>• We hold tables for 15 minutes past reservation time</p>
-                    <p>• Walk-ins are welcome based on availability</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
