@@ -24,13 +24,32 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Image 
-              src="/mm-logo.png" 
-              alt="Mojamajka Cafe" 
-              width={100} 
-              height={100} 
-              className="rounded-lg"
-            />
+            {/* Try Image first */}
+            <div className="relative w-[60px] h-[60px]">
+              <Image 
+                src="/mojamajka-logo.png" 
+                alt="Mojamajka Cafe" 
+                fill
+                className="rounded-lg object-contain"
+                priority
+                unoptimized
+                onError={(e) => {
+                  console.error('Logo failed to load, using text fallback');
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.parentElement?.nextElementSibling as HTMLElement;
+                  if (fallback) {
+                    fallback.style.display = 'block';
+                  }
+                }}
+              />
+            </div>
+            {/* Text fallback logo */}
+            <div 
+              className="text-white font-bold text-xl"
+              style={{display: 'none'}}
+            >
+              Moja Majka
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

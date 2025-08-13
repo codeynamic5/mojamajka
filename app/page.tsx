@@ -11,11 +11,12 @@ export default function HomePage() {
       <section className="relative h-screen flex items-center justify-center text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-red-900/80 to-red-800/60 z-10" />
         <Image
-          src="/mm-logo.png?height=1080&width=1920"
+          src="/mojamajka-logo.png"
           alt="Cafe interior"
           fill
           className="object-cover"
           priority
+          unoptimized
         />
         <div className="relative z-20 text-center max-w-4xl px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Moja Majka</h1>
