@@ -6,11 +6,12 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search, Download, Leaf, Flame, Wheat } from "lucide-react"
+import { Search, Download, Leaf, Flame, Wheat, Star } from "lucide-react"
 
-const menuCategories = ["All", "Appetizers", "Sharing", "Main Course", "Beverages", "Desserts"]
+const menuCategories = ["All", "Appetizers", "Sharing", "Main Course", "Pasta Series", "Wedangan", "Blended Drinks", "Milk Based", "Coconut Based", "Coffee Based", "Tea Based", "Soda Based", "Salad", "Dessert"]
 
 const menuItems = [
+  // Appetizers
   {
     id: 1,
     name: "Baked Potato",
@@ -83,6 +84,8 @@ const menuItems = [
     dietary: [],
     image: "colorful fruit smoothie",
   },
+
+  // Sharing
   {
     id: 9,
     name: "Smoked Meat Platter",
@@ -137,6 +140,8 @@ const menuItems = [
     dietary: [],
     image: "fruit tart with berries",
   },
+
+  // Main Course
   {
     id: 15,
     name: "Beef Patty Steak (Pljeskavica)",
@@ -272,15 +277,202 @@ const menuItems = [
     dietary: [],
     image: "fruit tart with berries",
   },
+
+  /* Pasta Series */
   {
     id: 30,
-    name: "Coffee",
-    description: "Disajikan dengan pilihan saus keju atau saus taragon",
-    price: 85,
-    category: "Beverages",
+    name: "Smoked Beed Brisket Carbonara",
+    description: "Spaghetti carbonara dengan topping daging sapi asap",
+    price: 59,
+    category: "Pasta Series",
     dietary: [],
     image: "fruit tart with berries",
   },
+  {
+    id: 31,
+    name: "Nila Aglio Olio Pasta",
+    description: "Spaghetti aglio olio dengan topping nila goreng tepung",
+    price: 37,
+    category: "Pasta Series",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 32,
+    name: "Baked Bolognese",
+    description: "Spaghetti bolognese dengan topping keju dan bread crumbs",
+    price: 40,
+    category: "Pasta Series",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 33,
+    name: "Beef & Mushroom Carbonara",
+    description: "Spaghetti carbonara dengan topping daging sapi dan jamur",
+    price: 45,
+    category: "Pasta Series",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 34,
+    name: "Squid Black Pasta",
+    description: "Spaghetti aglio olio dengan topping cumi goreng tepung",
+    price: 40,
+    category: "Pasta Series",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 35,
+    name: "Cheese Beef Patty Pasta",
+    description: "Spaghetti dengan saus keju dan beef patty",
+    price: 43,
+    category: "Pasta Series",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 36,
+    name: "Mac & Cheese",
+    description: "Pasta macaroni dengan saus keju",
+    price: 37,
+    category: "Pasta Series",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+
+  // Wedangan
+  {
+    id: 37,
+    name: "Swastamita Java",
+    description: "Wedang Rempah Sparkling (Jahe, serai, secang, cabe jawa, dll.)",
+    price: 25,
+    category: "Wedangan",
+    dietary: ["signature"],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 38,
+    name: "Wedang Uwuh",
+    description: "Secang & rempah-rempah lainnya",
+    price: 25,
+    category: "Wedangan",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 39,
+    name: "Wedang Kemucur",
+    description: "Jahe, Lemon, Alang-alang & rempah lainnya",
+    price: 25,
+    category: "Wedangan",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+
+  // Blended Drinks
+  {
+    id: 40,
+    name: "Velvet Blend",
+    description: "Red Velvet with a Berry & Cream Cheese",
+    price: 35,
+    category: "Blended Drinks",
+    dietary: ["signature"],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 41,
+    name: "Tropical Colada",
+    description: "Mango, Pineapple, and Coconut",
+    price: 35,
+    category: "Blended Drinks",
+    dietary: ["signature"],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 42,
+    name: "Cookies & Cream",
+    description: "Blended milk & cookies",
+    price: 35,
+    category: "Blended Drinks",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 43,
+    name: "Pink Cookies & Cream",
+    description: "Blended strawberry milk & cookies",
+    price: 35,
+    category: "Blended Drinks",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 44,
+    name: "Matcha Hazelnut",
+    description: "Premium Matcha flavoured with hazelnut",
+    price: 35,
+    category: "Blended Drinks",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+
+  // Milk Based
+  {
+    id: 45,
+    name: "Butterscotch Lotus",
+    description: "Lotus Biscoff, Butterscotch & Milk",
+    price: 35,
+    category: "Milk Based",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 46,
+    name: "Matcha Hazelnut",
+    description: "Premium Matcha flavoured with hazelnut",
+    price: 35,
+    category: "Milk Based",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 47,
+    name: "Matcha Hazelnut",
+    description: "Premium Matcha flavoured with hazelnut",
+    price: 35,
+    category: "Milk Based",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 48,
+    name: "Matcha Hazelnut",
+    description: "Premium Matcha flavoured with hazelnut",
+    price: 35,
+    category: "Milk Based",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 49,
+    name: "Matcha Hazelnut",
+    description: "Premium Matcha flavoured with hazelnut",
+    price: 35,
+    category: "Milk Based",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+
+  // Coconut Based
+
+
+  // Coffe Based
+
+
+  // Tea Based
 ]
 
 const dietaryIcons = {
@@ -288,6 +480,7 @@ const dietaryIcons = {
   vegan: { icon: Leaf, label: "Vegan", color: "bg-green-100 text-green-800" },
   "gluten-free": { icon: Wheat, label: "Gluten-Free", color: "bg-yellow-100 text-yellow-800" },
   spicy: { icon: Flame, label: "Spicy", color: "bg-red-100 text-red-800" },
+  signature: { icon: Star, label: "Signature", color: "bg-blue-100 text-blue-800" }
 }
 
 export default function MenuPage() {
