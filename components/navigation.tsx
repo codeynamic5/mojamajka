@@ -25,7 +25,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             {/* Try Image first */}
-            <div className="relative w-[60px] h-[60px]">
+            <div className="relative w-[80px] h-[80px]">
               <Image 
                 src="/mojamajka-logo.png" 
                 alt="Mojamajka Cafe" 
