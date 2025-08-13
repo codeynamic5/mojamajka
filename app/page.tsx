@@ -20,7 +20,7 @@ export default function HomePage() {
         <div className="relative z-20 text-center max-w-4xl px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Moja Majka</h1>
           <p className="text-xl md:text-2xl mb-8 text-red-100">
-            Where every cup tells a story and every meal feels like home
+            More than a cafe, it's a community. We serve kindness everyday.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center button-container">
             <Button asChild size="lg" className="bg-red-700 hover:bg-red-600 text-white transition-all duration-300 menu-button">
@@ -71,31 +71,31 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-red-900 mb-4">Signature Dishes</h2>
+            <h2 className="text-4xl font-bold text-red-900 mb-4">Our Signatures</h2>
             <p className="text-xl text-gray-600">Taste the flavors that make us special</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Artisan Breakfast Bowl",
+                name: "Buttered Meltique Steak",
                 description: "Farm-fresh eggs, avocado, quinoa, and seasonal vegetables",
                 price: "16",
                 image: "breakfast bowl with eggs and avocado",
               },
               {
-                name: "Signature Burger",
+                name: "Smoked Beef Brisket Carbonara",
                 description: "Grass-fed beef, aged cheddar, caramelized onions, brioche bun",
                 price: "18",
                 image: "gourmet burger with fries",
               },
               {
-                name: "Mediterranean Salad",
+                name: "Kopi Susu Moja Majka",
                 description: "Mixed greens, feta, olives, tomatoes, house vinaigrette",
                 price: "14",
                 image: "fresh mediterranean salad",
               },
               {
-                name: "Artisan Coffee",
+                name: "Caramel Earl Grey",
                 description: "Single-origin beans, expertly roasted, perfectly brewed",
                 price: "5",
                 image: "coffee cup with latte art",
@@ -169,7 +169,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Dine With Us?</h2>
           <p className="text-xl mb-8 text-red-100">
-            Reserve your table today and experience the warmth of The Corner Cafe
+            Reserve your table today and experience the warmth of Moja Majka
           </p>
           <Button asChild size="lg" className="bg-white text-red-900 hover:bg-red-50 transition-all duration-300 hover:scale-110">
             <Link href="/reservations">Make a Reservation</Link>

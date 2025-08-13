@@ -45,7 +45,7 @@ export default function AboutPage() {
                   className="bg-red-700 hover:bg-red-600 text-white transition-all duration-300"
                 >
                   <a 
-                    href="https://instagram.com/mojamajka" 
+                    href="https://www.instagram.com/mojamajka.eatery/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"

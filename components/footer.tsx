@@ -12,11 +12,16 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5" />
-                <div>
+                <a 
+                  href="https://maps.app.goo.gl/5EEG1MkUKK2uL1A99" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-red-200 transition-colors cursor-pointer"
+                >
                   <p>Jalan Raya Purworejo,</p>
                   <p>Kabupaten Magelang,</p>
                   <p>Jawa Tengah 56172</p>
-                </div>
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5" />
