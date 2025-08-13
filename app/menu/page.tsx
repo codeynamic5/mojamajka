@@ -956,7 +956,7 @@ export default function MenuPage() {
       <section className="py-8 px-4 bg-white border-b">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="relative flex-1 max-w-md">
+            {/* <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
               <Input
                 placeholder="Search menu items..."
@@ -964,7 +964,7 @@ export default function MenuPage() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"
               />
-            </div>
+            </div> */}
             <div className="flex flex-wrap gap-2">
               {menuCategories.map((category) => (
                 <Button
