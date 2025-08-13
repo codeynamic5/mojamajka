@@ -945,10 +945,10 @@ export default function MenuPage() {
           <p className="text-xl text-gray-700 mb-8">
             Crafted with love, served with pride. Every dish tells a story of quality and passion.
           </p>
-          <Button className="bg-red-800 hover:bg-red-700">
+          {/* <Button className="bg-red-800 hover:bg-red-700">
             <Download className="w-4 h-4 mr-2" />
             Download PDF Menu
-          </Button>
+          </Button> */}
         </div>
       </section>
 
