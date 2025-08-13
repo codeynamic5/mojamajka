@@ -1,6 +1,7 @@
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, Heart, Leaf, Users } from "lucide-react"
+import { Award, Heart, Leaf, Users, Instagram } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -38,6 +39,22 @@ export default function AboutPage() {
                 Today, we're proud to serve not just great food and coffee, but to be a place where memories are made,
                 friendships are formed, and the community comes together.
               </p>
+              <div className="mt-8">
+                <Button 
+                  asChild 
+                  className="bg-red-700 hover:bg-red-600 text-white transition-all duration-300"
+                >
+                  <a 
+                    href="https://instagram.com/mojamajka" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Instagram className="w-5 h-5" />
+                    See Our Moments
+                  </a>
+                </Button>
+              </div>
             </div>
             <div className="relative h-96">
               <Image
