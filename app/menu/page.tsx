@@ -842,6 +842,73 @@ const menuItems = [
     dietary: ["ice"],
     image: "fruit tart with berries",
   },
+
+  // Salad
+  {
+    id: 91,
+    name: "Grilled Salad",
+    description: "Sayuran segar yang dibakar dan disajikan dengan garlic herbs dressing",
+    price: 30,
+    category: "Salad",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 92,
+    name: "Fresh Salad",
+    description: "Sayuran segar yang dibakar dan disajikan dengan garlic herbs dressing",
+    price: 30,
+    category: "Salad",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+
+  // Dessert
+  {
+    id: 93,
+    name: "Bubur Sengkolo",
+    description: "Bubur Ketan Putih",
+    price: 25,
+    category: "Dessert",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 94,
+    name: "Mango Sago",
+    description: "Potongan mangga dingin disajikan dengan mango puree dan sagu mutiara",
+    price: 39,
+    category: "Dessert",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 95,
+    name: "Moja Majka Creamy Mango Milk",
+    description: "Disajikan dengan sagu mutiara",
+    price: 35,
+    category: "Dessert",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 96,
+    name: "Carang Gesing",
+    description: "Pisang Santan",
+    price: 20,
+    category: "Dessert",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
+  {
+    id: 97,
+    name: "Butterscotch Fried Banana",
+    description: "Disajikan dengan es krim vanilla",
+    price: 37,
+    category: "Dessert",
+    dietary: [],
+    image: "fruit tart with berries",
+  },
 ]
 
 const dietaryIcons = {
