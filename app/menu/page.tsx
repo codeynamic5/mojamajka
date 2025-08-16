@@ -37,7 +37,7 @@ const menuItems = [
     price: 33,
     category: "Appetizers",
     dietary: [],
-    image: "/menu/appetizers/belgian-fries.JPG",
+    image: "/menu/appetizers/belgian-fries.jpg",
   },
   {
     id: 4,
@@ -93,7 +93,7 @@ const menuItems = [
     price: 137,
     category: "Sharing",
     dietary: [],
-    image: "/menu/sharing/smoked-meatplat.JPG",
+    image: "/menu/sharing/smoked-meatplat.jpg",
   },
   {
     id: 10,
@@ -102,7 +102,7 @@ const menuItems = [
     price: 159,
     category: "Sharing",
     dietary: [],
-    image: "/menu/sharing/creamy-fett.JPG",
+    image: "/menu/sharing/creamy-fett.jpg",
   },
   {
     id: 11,
@@ -111,7 +111,7 @@ const menuItems = [
     price: 49,
     category: "Sharing",
     dietary: ["spicy"],
-    image: "/menu/sharing/ayam-pandan.JPG",
+    image: "/menu/sharing/ayam-pandan.jpg",
   },
   {
     id: 12,
@@ -120,7 +120,7 @@ const menuItems = [
     price: 69,
     category: "Sharing",
     dietary: [],
-    image: "/menu/sharing/mangut-nila.JPG",
+    image: "/menu/sharing/mangut-nila.jpg",
   },
   {
     id: 13,
@@ -129,7 +129,7 @@ const menuItems = [
     price: "39 / 44.5",
     category: "Sharing",
     dietary: [],
-    image: "/menu/sharing/gongso-bebek.JPG",
+    image: "/menu/sharing/gongso-bebek.jpg",
   },
   {
     id: 14,
@@ -149,7 +149,7 @@ const menuItems = [
     price: 85,
     category: "Main Course",
     dietary: [],
-    image: "/menu/main/beefpatty-steak.JPG",
+    image: "/menu/main/beefpatty-steak.jpg",
   },
   {
     id: 16,
@@ -158,7 +158,7 @@ const menuItems = [
     price: 85,
     category: "Main Course",
     dietary: [],
-    image: "/menu/main/loaded-cheeseburger.JPG",
+    image: "/menu/main/loaded-cheeseburger.jpg",
   },
   {
     id: 17,
@@ -167,7 +167,7 @@ const menuItems = [
     price: 150,
     category: "Main Course",
     dietary: [],
-    image: "/menu/main/buttered-meltique.JPG",
+    image: "/menu/main/buttered-meltique.jpg",
   },
   {
     id: 18,
@@ -176,7 +176,7 @@ const menuItems = [
     price: 49,
     category: "Main Course",
     dietary: ["spicy"],
-    image: "/menu/main/nila-bakar.JPG",
+    image: "/menu/main/nila-bakar.jpg",
   },
   {
     id: 19,
@@ -185,7 +185,7 @@ const menuItems = [
     price: 79,
     category: "Main Course",
     dietary: ["spicy"],
-    image: "/menu/main/iga-lombokijo.JPG",
+    image: "/menu/main/iga-lombokijo.jpg",
   },
   {
     id: 20,
@@ -194,7 +194,7 @@ const menuItems = [
     price: 30,
     category: "Main Course",
     dietary: [],
-    image: "/menu/main/kwetiau-biyung.JPG",
+    image: "/menu/main/kwetiau-biyung.jpg",
   },
   {
     id: 21,
