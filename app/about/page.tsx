@@ -58,8 +58,8 @@ export default function AboutPage() {
             </div>
             <div className="relative h-96">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Cafe founders"
+                src="/about.jpg"
+                alt="Moja Majka restaurant interior"
                 fill
                 className="object-cover rounded-lg shadow-lg"
               />

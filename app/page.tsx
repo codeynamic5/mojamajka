@@ -58,8 +58,8 @@ export default function HomePage() {
             </div>
             <div className="relative h-96">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Chef preparing food"
+                src="/homepage.jpg"
+                alt="Moja Majka restaurant interior and atmosphere"
                 fill
                 className="object-cover rounded-lg shadow-lg"
               />
@@ -81,31 +81,31 @@ export default function HomePage() {
                 name: "Buttered Meltique Steak",
                 description: "Farm-fresh eggs, avocado, quinoa, and seasonal vegetables",
                 price: "16",
-                image: "breakfast bowl with eggs and avocado",
+                image: "/menu/main/buttered-meltique.jpg",
               },
               {
                 name: "Smoked Beef Brisket Carbonara",
                 description: "Grass-fed beef, aged cheddar, caramelized onions, brioche bun",
                 price: "18",
-                image: "gourmet burger with fries",
+                image: "/menu/pasta/beefbrisket-carbo.jpg",
               },
               {
                 name: "Kopi Susu Moja Majka",
                 description: "Mixed greens, feta, olives, tomatoes, house vinaigrette",
                 price: "14",
-                image: "fresh mediterranean salad",
+                image: "/menu/drinks/kopsus-mojmaj.jpg",
               },
               {
                 name: "Caramel Earl Grey",
                 description: "Single-origin beans, expertly roasted, perfectly brewed",
                 price: "5",
-                image: "coffee cup with latte art",
+                image: "/menu/drinks/caramel-earlgrey.jpg",
               },
             ].map((item, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="relative h-48">
                   <Image
-                    src={`/placeholder.svg?height=200&width=300&query=${item.image}`}
+                    src={item.image.startsWith('/') ? item.image : `/placeholder.svg?height=200&width=300&query=${item.image}`}
                     alt={item.name}
                     fill
                     className="object-cover"
