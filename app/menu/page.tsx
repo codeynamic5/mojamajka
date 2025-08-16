@@ -398,7 +398,7 @@ const menuItems = [
     price: 35,
     category: "Blended Drinks",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/cookies-cream.jpg",
   },
   {
     id: 43,
@@ -407,7 +407,7 @@ const menuItems = [
     price: 35,
     category: "Blended Drinks",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/pink-cc.jpg",
   },
   {
     id: 44,
@@ -454,7 +454,7 @@ const menuItems = [
     price: 32,
     category: "Milk Based",
     dietary: ["ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/caramel-lotus.jpg",
   },
   {
     id: 49,
@@ -463,7 +463,7 @@ const menuItems = [
     price: "30/32",
     category: "Milk Based",
     dietary: ["hot", "ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/flavoured-choc.jpg",
   },
 
   // Coconut Based
@@ -474,7 +474,7 @@ const menuItems = [
     price: 30,
     category: "Coconut Based",
     dietary: ["signature"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/ocean-berry.jpg",
   },
   {
     id: 51,
@@ -483,7 +483,7 @@ const menuItems = [
     price: 30,
     category: "Coconut Based",
     dietary: ["signature"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/pink-coral.jpg",
   },
 
   // Coffe Based
@@ -494,7 +494,7 @@ const menuItems = [
     price: 32,
     category: "Coffee Based",
     dietary: ["signature", "ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/kopsus-mojmaj.jpg",
   },
   {
     id: 53,
@@ -503,7 +503,7 @@ const menuItems = [
     price: 25,
     category: "Coffee Based",
     dietary: ["signature", "ice", "hot"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/rempah.jpg",
   },
   {
     id: 54,
@@ -512,7 +512,7 @@ const menuItems = [
     price: 32,
     category: "Coffee Based",
     dietary: ["signature", "ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/double-peach.jpg",
   },
   {
     id: 55,
@@ -539,7 +539,7 @@ const menuItems = [
     price: 22,
     category: "Coffee Based",
     dietary: ["ice", "hot", "black"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/americano.jpg",
   },
   {
     id: 58,
@@ -566,7 +566,7 @@ const menuItems = [
     price: "28/30",
     category: "Coffee Based",
     dietary: ["ice", "hot", "white"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/strawberry-cafe.jpg",
   },
   {
     id: 61,
@@ -584,7 +584,7 @@ const menuItems = [
     price: 33,
     category: "Coffee Based",
     dietary: ["ice", "white"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/caramel-macchiato.jpg",
   },
   {
     id: 63,
@@ -611,7 +611,7 @@ const menuItems = [
     price: 30,
     category: "Coffee Based",
     dietary: ["hot", "white"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/magic.jpg",
   },
   {
     id: 66,
@@ -624,12 +624,12 @@ const menuItems = [
   },
   {
     id: 67,
-    name: "Cappucino",
+    name: "Cappuccino",
     description: "Single Espresso - Steamed Milk",
     price: 27,
     category: "Coffee Based",
     dietary: ["ice", "hot", "white"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/cappuccino.jpg",
   },
   {
     id: 68,
@@ -638,7 +638,7 @@ const menuItems = [
     price: "27/29",
     category: "Coffee Based",
     dietary: ["ice", "hot", "white"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/mochaccino.jpg",
   },
   {
     id: 69,
@@ -647,7 +647,7 @@ const menuItems = [
     price: "26/28",
     category: "Coffee Based",
     dietary: ["ice", "hot", "white"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/latte.jpg",
   },
   {
     id: 70,
@@ -656,7 +656,7 @@ const menuItems = [
     price: 28,
     category: "Coffee Based",
     dietary: ["ice", "white"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/dirty-latte.jpg",
   },
   {
     id: 71,
@@ -674,7 +674,7 @@ const menuItems = [
     price: 32,
     category: "Coffee Based",
     dietary: ["ice", "mocktail"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/doubleshaken-caramel.jpg",
   },
   {
     id: 73,
@@ -692,7 +692,7 @@ const menuItems = [
     price: 30,
     category: "Coffee Based",
     dietary: ["signature", "ice", "mocktail"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/kompot.jpg",
   },
   {
     id: 75,
@@ -701,7 +701,7 @@ const menuItems = [
     price: 30,
     category: "Coffee Based",
     dietary: ["ice", "mocktail"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/citric-bloom.jpg",
   },
   {
     id: 76,
@@ -710,7 +710,7 @@ const menuItems = [
     price: 30,
     category: "Coffee Based",
     dietary: ["ice", "mocktail"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/slatko-od-jagoda.jpg",
   },
 
   // Tea Based
@@ -721,7 +721,7 @@ const menuItems = [
     price: 30,
     category: "Tea Based",
     dietary: ["ice", "signature", "mocktail"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/caramel-earlgrey.jpg",
   },
   {
     id: 78,
@@ -730,7 +730,7 @@ const menuItems = [
     price: 30,
     category: "Tea Based",
     dietary: ["ice", "mocktail"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/victorian.jpg",
   },
   {
     id: 79,
@@ -739,7 +739,7 @@ const menuItems = [
     price: 28,
     category: "Tea Based",
     dietary: ["ice", "mocktail"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/golden-sunfruit.jpg",
   },
   {
     id: 85,
@@ -748,7 +748,7 @@ const menuItems = [
     price: 25,
     category: "Tea Based",
     dietary: ["ice", "signature"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/peach-tea.jpg",
   },
   {
     id: 86,
@@ -784,7 +784,7 @@ const menuItems = [
     price: 25,
     category: "Tea Based",
     dietary: ["ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/lychee-tea.jpg",
   },
   {
     id: 90,
@@ -804,7 +804,7 @@ const menuItems = [
     price: 28,
     category: "Soda Based",
     dietary: ["ice", "signature"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/crainberry-apple.jpg",
   },
   {
     id: 81,
@@ -813,7 +813,7 @@ const menuItems = [
     price: 28,
     category: "Soda Based",
     dietary: ["ice", "signature"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/soda-pop.jpg",
   },
   {
     id: 82,
@@ -822,7 +822,7 @@ const menuItems = [
     price: 28,
     category: "Soda Based",
     dietary: ["ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/cuban-mojito.jpg",
   },
   {
     id: 83,
@@ -871,7 +871,7 @@ const menuItems = [
     price: 25,
     category: "Dessert",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/desserts/sengkolo.jpg",
   },
   {
     id: 94,
@@ -880,7 +880,7 @@ const menuItems = [
     price: 39,
     category: "Dessert",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/desserts/mango-sago.jpg",
   },
   {
     id: 95,
@@ -889,7 +889,7 @@ const menuItems = [
     price: 35,
     category: "Dessert",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/desserts/creamy-mango.jpg",
   },
   {
     id: 96,
@@ -1003,9 +1003,9 @@ export default function MenuPage() {
                 className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
                 onClick={() => setSelectedItem(item)}
               >
-                <div className={`relative ${isDrinkCategory ? 'h-64' : 'h-48'}`}>
+                <div className={`relative ${isDrinkCategory ? 'h-80' : 'h-48'}`}>
                   <Image
-                    src={item.image.startsWith('/') ? item.image : `/placeholder.svg?height=200&width=300&query=${item.image}`}
+                    src={item.image.startsWith('/') ? item.image : `/placeholder.svg?height=500&width=300&query=${item.image}`}
                     alt={item.name}
                     fill
                     className="object-cover"
@@ -1038,12 +1038,6 @@ export default function MenuPage() {
               )
             })}
           </div>
-
-          {filteredItems.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-xl text-gray-600">No items found matching your search.</p>
-            </div>
-          )}
         </div>
       </section>
 
@@ -1122,7 +1116,7 @@ export default function MenuPage() {
               {/* Large Image */}
               <div className={`relative w-full rounded-lg overflow-hidden ${
                 ["Wedangan", "Blended Drinks", "Milk Based", "Coconut Based", "Coffee Based", "Tea Based", "Soda Based"].includes(selectedItem.category)
-                  ? 'h-80 md:h-96' 
+                  ? 'h-200 md:h-[28rem]' 
                   : 'h-64 md:h-80'
               }`}>
                 <Image
@@ -1154,7 +1148,6 @@ export default function MenuPage() {
               {/* Dietary Information */}
               {selectedItem.dietary.length > 0 && (
                 <div>
-                  <h4 className="font-semibold text-lg mb-2">Dietary Information</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedItem.dietary.map((diet) => {
                       const dietInfo = dietaryIcons[diet as keyof typeof dietaryIcons]
