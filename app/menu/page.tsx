@@ -203,7 +203,7 @@ const menuItems = [
     price: 30,
     category: "Main Course",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/main/bakmi-biyung.jpg",
   },
   {
     id: 22,
@@ -212,7 +212,7 @@ const menuItems = [
     price: 30,
     category: "Main Course",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/main/nasgor-biyung.jpg",
   },
   {
     id: 23,
@@ -281,12 +281,12 @@ const menuItems = [
   /* Pasta Series */
   {
     id: 30,
-    name: "Smoked Beed Brisket Carbonara",
+    name: "Smoked Beef Brisket Carbonara",
     description: "Spaghetti carbonara dengan topping daging sapi asap",
     price: 59,
     category: "Pasta Series",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/pasta/beefbrisket-carbo.jpg",
   },
   {
     id: 31,
@@ -295,7 +295,7 @@ const menuItems = [
     price: 37,
     category: "Pasta Series",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/pasta/nila-agliolio.jpg",
   },
   {
     id: 32,
@@ -304,7 +304,7 @@ const menuItems = [
     price: 40,
     category: "Pasta Series",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/pasta/baked-bolognese.jpg",
   },
   {
     id: 33,
@@ -313,7 +313,7 @@ const menuItems = [
     price: 45,
     category: "Pasta Series",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/pasta/beefmushroom-carbo.jpg",
   },
   {
     id: 34,
@@ -321,8 +321,8 @@ const menuItems = [
     description: "Spaghetti aglio olio dengan topping cumi goreng tepung",
     price: 40,
     category: "Pasta Series",
-    dietary: ["black"],
-    image: "fruit tart with berries",
+    dietary: [],
+    image: "/menu/pasta/squid-black.jpg",
   },
   {
     id: 35,
@@ -331,7 +331,7 @@ const menuItems = [
     price: 43,
     category: "Pasta Series",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/pasta/cheesebeef-patty.jpg",
   },
   {
     id: 36,
@@ -340,7 +340,7 @@ const menuItems = [
     price: 37,
     category: "Pasta Series",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/pasta/mac-cheese.jpg",
   },
 
   // Wedangan
@@ -351,7 +351,7 @@ const menuItems = [
     price: 25,
     category: "Wedangan",
     dietary: ["signature"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/swastamita-java.jpg",
   },
   {
     id: 38,
@@ -360,7 +360,7 @@ const menuItems = [
     price: 25,
     category: "Wedangan",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/uwuh.jpg",
   },
   {
     id: 39,
@@ -369,7 +369,7 @@ const menuItems = [
     price: 25,
     category: "Wedangan",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/kemucur.jpg",
   },
 
   // Blended Drinks
@@ -380,7 +380,7 @@ const menuItems = [
     price: 35,
     category: "Blended Drinks",
     dietary: ["signature", "ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/velvet-blend.jpg",
   },
   {
     id: 41,
@@ -389,7 +389,7 @@ const menuItems = [
     price: 35,
     category: "Blended Drinks",
     dietary: ["signature", "ice"],
-    image: "fruit tart with berries",
+    image: "/menu/drinks/tropical-colada.jpg",
   },
   {
     id: 42,
@@ -986,13 +986,24 @@ export default function MenuPage() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredItems.map((item) => (
+            {filteredItems.map((item) => {
+              const isDrinkCategory = [
+                "Wedangan", 
+                "Blended Drinks", 
+                "Milk Based", 
+                "Coconut Based", 
+                "Coffee Based", 
+                "Tea Based", 
+                "Soda Based"
+              ].includes(item.category)
+              
+              return (
               <Card 
                 key={item.id} 
                 className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
                 onClick={() => setSelectedItem(item)}
               >
-                <div className="relative h-48">
+                <div className={`relative ${isDrinkCategory ? 'h-64' : 'h-48'}`}>
                   <Image
                     src={item.image.startsWith('/') ? item.image : `/placeholder.svg?height=200&width=300&query=${item.image}`}
                     alt={item.name}
@@ -1024,7 +1035,8 @@ export default function MenuPage() {
                   )}
                 </CardContent>
               </Card>
-            ))}
+              )
+            })}
           </div>
 
           {filteredItems.length === 0 && (
@@ -1108,7 +1120,11 @@ export default function MenuPage() {
               </div>
               
               {/* Large Image */}
-              <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden">
+              <div className={`relative w-full rounded-lg overflow-hidden ${
+                ["Wedangan", "Blended Drinks", "Milk Based", "Coconut Based", "Coffee Based", "Tea Based", "Soda Based"].includes(selectedItem.category)
+                  ? 'h-80 md:h-96' 
+                  : 'h-64 md:h-80'
+              }`}>
                 <Image
                   src={selectedItem.image.startsWith('/') ? selectedItem.image : `/placeholder.svg?height=400&width=600&query=${selectedItem.image}`}
                   alt={selectedItem.name}
