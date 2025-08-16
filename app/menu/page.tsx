@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { Search, Download, Leaf, Flame, Wheat, Star, Thermometer, Snowflake, Dot, Coffee, GlassWater } from "lucide-react"
+import { Search, Download, Leaf, Flame, Wheat, Star, Thermometer, Snowflake, Dot, Coffee, GlassWater, X } from "lucide-react"
 
 const menuCategories = ["All", "Appetizers", "Sharing", "Main Course", "Pasta Series", "Wedangan", "Blended Drinks", "Milk Based", "Coconut Based", "Coffee Based", "Tea Based", "Soda Based", "Salad", "Dessert"]
 
@@ -19,7 +19,7 @@ const menuItems = [
     price: 39,
     category: "Appetizers",
     dietary: [],
-    image: "breakfast bowl with eggs and avocado",
+    image: "/menu/appetizers/baked-potato.JPG",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const menuItems = [
     price: 35,
     category: "Appetizers",
     dietary: ["vegetarian"],
-    image: "stack of pancakes with berries",
+    image: "/menu/appetizers/crispy-mushrooms.JPG",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const menuItems = [
     price: 33,
     category: "Appetizers",
     dietary: [],
-    image: "gourmet burger with fries",
+    image: "/menu/appetizers/belgian-fries.JPG",
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const menuItems = [
     price: 33,
     category: "Appetizers",
     dietary: [],
-    image: "fresh mediterranean salad",
+    image: "/menu/appetizers/potato-wedges.JPG",
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const menuItems = [
     price: 45,
     category: "Appetizers",
     dietary: ["spicy"],
-    image: "grilled salmon with vegetables",
+    image: "/menu/appetizers/nachoss.JPG",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const menuItems = [
     price: 25,
     category: "Appetizers",
     dietary: [],
-    image: "pasta with vegetables",
+    image: "/menu/appetizers/singkong-goreng.JPG",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const menuItems = [
     price: 39,
     category: "Appetizers",
     dietary: [],
-    image: "coffee cup with latte art",
+    image: "/menu/appetizers/chicken-popcorn.JPG",
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ const menuItems = [
     price: 39,
     category: "Appetizers",
     dietary: [],
-    image: "colorful fruit smoothie",
+    image: "/menu/appetizers/nila-fingers.JPG",
   },
 
   // Sharing
@@ -93,7 +93,7 @@ const menuItems = [
     price: 137,
     category: "Sharing",
     dietary: [],
-    image: "chocolate lava cake with ice cream",
+    image: "/menu/sharing/smoked-meatplat.JPG",
   },
   {
     id: 10,
@@ -102,7 +102,7 @@ const menuItems = [
     price: 159,
     category: "Sharing",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/sharing/creamy-fett.JPG",
   },
   {
     id: 11,
@@ -111,7 +111,7 @@ const menuItems = [
     price: 49,
     category: "Sharing",
     dietary: ["spicy"],
-    image: "fruit tart with berries",
+    image: "/menu/sharing/ayam-pandan.JPG",
   },
   {
     id: 12,
@@ -120,7 +120,7 @@ const menuItems = [
     price: 69,
     category: "Sharing",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/sharing/mangut-nila.JPG",
   },
   {
     id: 13,
@@ -129,7 +129,7 @@ const menuItems = [
     price: "39 / 44.5",
     category: "Sharing",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/sharing/gongso-bebek.JPG",
   },
   {
     id: 14,
@@ -149,7 +149,7 @@ const menuItems = [
     price: 85,
     category: "Main Course",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/main/beefpatty-steak.JPG",
   },
   {
     id: 16,
@@ -158,7 +158,7 @@ const menuItems = [
     price: 85,
     category: "Main Course",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/main/loaded-cheeseburger.JPG",
   },
   {
     id: 17,
@@ -167,7 +167,7 @@ const menuItems = [
     price: 150,
     category: "Main Course",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/main/buttered-meltique.JPG",
   },
   {
     id: 18,
@@ -176,7 +176,7 @@ const menuItems = [
     price: 49,
     category: "Main Course",
     dietary: ["spicy"],
-    image: "fruit tart with berries",
+    image: "/menu/main/nila-bakar.JPG",
   },
   {
     id: 19,
@@ -185,7 +185,7 @@ const menuItems = [
     price: 79,
     category: "Main Course",
     dietary: ["spicy"],
-    image: "fruit tart with berries",
+    image: "/menu/main/iga-lombokijo.JPG",
   },
   {
     id: 20,
@@ -194,7 +194,7 @@ const menuItems = [
     price: 30,
     category: "Main Course",
     dietary: [],
-    image: "fruit tart with berries",
+    image: "/menu/main/kwetiau-biyung.JPG",
   },
   {
     id: 21,
@@ -927,6 +927,7 @@ const dietaryIcons = {
 export default function MenuPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [searchTerm, setSearchTerm] = useState("")
+  const [selectedItem, setSelectedItem] = useState<typeof menuItems[0] | null>(null)
 
   const filteredItems = menuItems.filter((item) => {
     const matchesCategory = selectedCategory === "All" || item.category === selectedCategory
@@ -986,10 +987,14 @@ export default function MenuPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-              <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              <Card 
+                key={item.id} 
+                className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                onClick={() => setSelectedItem(item)}
+              >
                 <div className="relative h-48">
                   <Image
-                    src={`/placeholder.svg?height=200&width=300&query=${item.image}`}
+                    src={item.image.startsWith('/') ? item.image : `/placeholder.svg?height=200&width=300&query=${item.image}`}
                     alt={item.name}
                     fill
                     className="object-cover"
@@ -1071,6 +1076,87 @@ export default function MenuPage() {
           </div>
         </div>
       </section>
+
+      {/* Modal for enlarged item view */}
+      {selectedItem && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedItem(null)}
+        >
+          {/* Semi-transparent backdrop */}
+          <div className="absolute inset-0 bg-black/50" />
+          
+          {/* Modal content */}
+          <div 
+            className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedItem(null)}
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <div className="p-6 space-y-6">
+              {/* Title */}
+              <div>
+                <h2 className="text-2xl font-bold text-red-900">
+                  {selectedItem.name}
+                </h2>
+              </div>
+              
+              {/* Large Image */}
+              <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden">
+                <Image
+                  src={selectedItem.image.startsWith('/') ? selectedItem.image : `/placeholder.svg?height=400&width=600&query=${selectedItem.image}`}
+                  alt={selectedItem.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Price and Category */}
+              <div className="flex justify-between items-center">
+                <Badge variant="outline" className="text-sm">
+                  {selectedItem.category}
+                </Badge>
+                <span className="text-3xl font-bold text-red-800">
+                  {typeof selectedItem.price === 'string' ? selectedItem.price : `${selectedItem.price}`}
+                </span>
+              </div>
+
+              {/* Description */}
+              <div>
+                <h4 className="font-semibold text-lg mb-2">Description</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  {selectedItem.description}
+                </p>
+              </div>
+
+              {/* Dietary Information */}
+              {selectedItem.dietary.length > 0 && (
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Dietary Information</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedItem.dietary.map((diet) => {
+                      const dietInfo = dietaryIcons[diet as keyof typeof dietaryIcons]
+                      if (!dietInfo) return null
+                      return (
+                        <Badge key={diet} className={dietInfo.color}>
+                          <dietInfo.icon className="w-3 h-3 mr-1" />
+                          {dietInfo.label}
+                        </Badge>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
